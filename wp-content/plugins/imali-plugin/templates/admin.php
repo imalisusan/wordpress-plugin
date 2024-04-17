@@ -28,36 +28,36 @@
 				<form method="post" action="http://127.0.0.1:5500/wp-content/plugins/imali-plugin/templates/custom-checkout.php">
 					<div class="col-7 col">
 						<h3 class="topborder"><span>Billing Details</span></h3>
-						<label for="country">Country</label><br>
-						<select id="countries"></select>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                        <script>
-                            function toSentenceCase(str) {
-                                return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-                            }
-                        $(document).ready(function() {
-                            const settings = {
-                                async: true,
-                                crossDomain: true,
-                                url: 'https://rest-countries10.p.rapidapi.com/countries',
-                                method: 'GET',
-                                headers: {
-                                    'X-RapidAPI-Key': 'be720e34a1msha5bfab11947d986p19c52cjsn7d97525068d0',
-                                    'X-RapidAPI-Host': 'rest-countries10.p.rapidapi.com'
+                            <label for="country">Country</label><br>
+                            <select id="countries"></select>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                            <script>
+                                function toSentenceCase(str) {
+                                    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
                                 }
-                            };
-
-                            $.ajax(settings).done(function (response) {
-                                const select = $('#countries');
-                                response.forEach(function(country) {
-                                    if (country.name && country.name.shortname) {
-                                        const option = $('<option></option>').val(toSentenceCase(country.name.shortname)).text(toSentenceCase(country.name.shortname));
-                                        select.append(option);
+                            $(document).ready(function() {
+                                const settings = {
+                                    async: true,
+                                    crossDomain: true,
+                                    url: 'https://rest-countries10.p.rapidapi.com/countries',
+                                    method: 'GET',
+                                    headers: {
+                                        'X-RapidAPI-Key': 'be720e34a1msha5bfab11947d986p19c52cjsn7d97525068d0',
+                                        'X-RapidAPI-Host': 'rest-countries10.p.rapidapi.com'
                                     }
+                                };
+
+                                $.ajax(settings).done(function (response) {
+                                    const select = $('#countries');
+                                    response.forEach(function(country) {
+                                        if (country.name && country.name.shortname) {
+                                            const option = $('<option></option>').val(toSentenceCase(country.name.shortname)).text(toSentenceCase(country.name.shortname));
+                                            select.append(option);
+                                        }
+                                    });
                                 });
                             });
-                        });
-                        </script>
+                            </script>
 						<div class="width50 padright">
 							<label for="fname">First Name</label>
 							<input type="text" name="fname" id="fname" required>
