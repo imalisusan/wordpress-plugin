@@ -131,12 +131,13 @@ input[type="submit"]:hover
 	font-size: 14px;
 	font-weight: 100;
 	margin-top: 25px;
+	border: none;
 }
 
 .order .redbutton:hover
 {
-	background-color: #000;
-	border: none;
+	background-color: #f3f3f3;
+	border: solid #D6544E;
 }
 
 textarea
