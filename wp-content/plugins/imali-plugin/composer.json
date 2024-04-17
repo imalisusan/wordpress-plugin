@@ -1,0 +1,22 @@
+{
+    "name": "george/imali-plugin",
+    "description": "Starter plugin",
+    "type": "project",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "George",
+            "email": "kariukigeorge511@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "minimum-stability": "dev"
+  
+}
